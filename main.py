@@ -50,6 +50,7 @@ while True:
                         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
 
                 print(face)
+                
                 for i in range(0,68):
                         x = landmarks.part(i).x
                         y = landmarks.part(i).y
