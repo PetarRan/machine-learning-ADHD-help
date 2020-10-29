@@ -5,14 +5,18 @@ import winsound
 import random
 import datetime
 import keyboard
+import time
 
-cap = cv2.VideoCapture('test1.mp4')  ##---change
+cap = cv2.VideoCapture('test00.mp4')  ##---change
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-noAttentionFrameNum = 0
 t = datetime.datetime.now()
-open('dump.txt', 'w').close()####################################Timestamp fajl
+open('dump.txt', 'w').close()  ####################################Timestamp fajl
+
+entry1 = 1
+entry2 = 1
+start = 0.0
 
 while True:
     _, frame = cap.read()
@@ -21,14 +25,19 @@ while True:
     faces = detector(gray)
     isItFace = len(faces)
     voiceNum = random.randint(1, 7)  # random broj od 1-7 radi biranja random glasovnog fajla.
-    
-    #####################################PROVERAVA DA LI JE LICE U VIEWFIELDU, AKO NIJE, BROJI VREME################### 
-    if isItFace == 0:
-        noAttentionFrameNum += 1###CHANGE!
-    ###################################################################################################################
-    
+
+    #####################################PROVERAVA DA LI JE LICE U VIEWFIELDU, AKO NIJE, BROJI VREME###################
+    if isItFace == 0 and entry1 == 1:
+        entry1 = 0
+        start = time.time()
+        print('ne prati')
+        ###################################################################################################################
+
+    if isItFace==1:
+        start=time.time()
+
     for face in faces:
-        
+
         ####################################NALAZI LICE POMOCU DLIB-a###################################################
         x1 = face.left()
         y1 = face.top()
@@ -47,10 +56,19 @@ while True:
         # position-15
         xposCrit15 = landmarks.part(15).x
         yposCrit15 = landmarks.part(15).y
+        # position-2
+        xposCrit2 = landmarks.part(2).x
+        yposCrit2 = landmarks.part(2).y
+        # position-14
+        xposCrit14 = landmarks.part(14).x
+        yposCrit14 = landmarks.part(14).y
         ##############################################################################################################
-        
+
         ############################PROVERAVA VREDNOSTI I POKLAPANJE KRITICNIH TACAKA LICA############################
-        if (xposCrit33 == xposCrit1 or yposCrit33 == yposCrit1 or xposCrit33 == xposCrit15 or yposCrit33 == yposCrit15):
+        if (xposCrit33 == xposCrit1 and yposCrit33 == yposCrit1) or \
+                (xposCrit33 == xposCrit15 and yposCrit33 == yposCrit15) or \
+                (xposCrit33 == xposCrit2 and yposCrit33 == yposCrit2) or \
+                (xposCrit33 == xposCrit14 and yposCrit33 == yposCrit14):
             winsound.PlaySound('glas' + voiceNum.__str__() + '.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
             t1 = datetime.datetime.now()
@@ -67,16 +85,16 @@ while True:
             cv2.circle(frame, (x, y), 3, (0, 255, 0), -1)
 
     cv2.imshow("Frame 1", frame)
-    
+
     #######################################PROVERAVA VREME PROVEDENO VAN VIEWFIELDA####################################
-    if (noAttentionFrameNum > 12):##CHANGE!
+    if time.time() - start > 3:  ##CHANGE!
         winsound.PlaySound('glas' + voiceNum.__str__() + '.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
         t1 = datetime.datetime.now()
         d = t1 - t
         f = open("dump.txt", "a")
         f.write(str(d) + "\n")
         f.close()
-        noAttentionFrameNum = 0
+        entry1 = 1
     ####################################################################################################################
     key = cv2.waitKey(1)
     if key == 27:
