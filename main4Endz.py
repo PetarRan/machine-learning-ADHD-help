@@ -9,7 +9,7 @@ import time
 import csv
 import pandas as pd
 import plotly.express as px
-with open('attention_time_file', 'w') as fa:
+with open('attention_time_file.cvs', 'w') as fa:
     writer = csv.writer(fa)
     writer.writerow(["Attention[%]", "Time[s]"])
 
@@ -43,7 +43,7 @@ while True:
         t1 = datetime.datetime.now()
         delta_time = t1 - t
         sec = delta_time.seconds
-        with open('attention_time_file', 'a') as fa:
+        with open('attention_time_file.cvs', 'a') as fa:
             writer = csv.writer(fa)
             writer.writerow([100, int(sec)])
 
@@ -95,14 +95,14 @@ while True:
             t1 = datetime.datetime.now()
             delta_time = t1 - t
             sec = delta_time.seconds
-            with open('attention_time_file', 'a') as fa:
+            with open('attention_time_file.cvs', 'a') as fa:
                 writer = csv.writer(fa)
                 writer.writerow([0, int(sec)])
         else:
             t1 = datetime.datetime.now()
             delta_time = t1 - t
             sec = delta_time.seconds
-            with open('attention_time_file', 'a') as fa:
+            with open('attention_time_file.cvs', 'a') as fa:
                 writer = csv.writer(fa)
                 writer.writerow([100, int(sec)])
 
@@ -123,7 +123,7 @@ while True:
         delta_time = t1 - t
         entry1 = 1
         sec = delta_time.seconds
-        with open('attention_time_file', 'a') as fa:
+        with open('attention_time_file.cvs', 'a') as fa:
             writer = csv.writer(fa)
             writer.writerow([0, int(sec)])
     ####################################################################################################################
@@ -134,6 +134,6 @@ while True:
         break
 
 
-df = pd.read_csv('attention_time_file')
+df = pd.read_csv('attention_time_file.cvs')
 fig = px.line(df, x='Time[s]', y='Attention[%]', title='Percentage of attention in time')
 fig.show()
