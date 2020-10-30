@@ -15,7 +15,7 @@ with open('attention_time_file.cvs', 'w') as fa:
     writer = csv.writer(fa)
     writer.writerow(["Time[min]"])
 
-cap = cv2.VideoCapture('test00.mp4')
+cap = cv2.VideoCapture(0)
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
