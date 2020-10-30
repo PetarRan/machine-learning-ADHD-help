@@ -9,17 +9,16 @@ import time
 import csv
 import pandas as pd
 import plotly.express as px
-with open('inn.cvs', 'w') as fa:
+with open('attention_time_file', 'w') as fa:
     writer = csv.writer(fa)
-    writer.writerow(["Paznja", "Vreme"])
+    writer.writerow(["Attention[%]", "Time[s]"])
 
 cap = cv2.VideoCapture(0)  ##---change
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 t = datetime.datetime.now()
-open('dump.txt', 'w').close()  ####################################Timestamp fajl
-
+  ####################################Timestamp fajl
 entry1 = 1
 entry2 = 1
 start = 0.0
@@ -41,14 +40,12 @@ while True:
 
     if isItFace==1:
         start=time.time()
-        #### OVAJ DEO JE VEZAN ZA GRAFIK **
         t1 = datetime.datetime.now()
-        d= t1 - t
-        sec = d.seconds
-        with open('inn.cvs', 'a') as fa:
+        delta_time = t1 - t
+        sec = delta_time.seconds
+        with open('attention_time_file', 'a') as fa:
             writer = csv.writer(fa)
-            writer.writerow([0, int(sec)])
-        ### KRAJ TOG DELA 
+            writer.writerow([100, int(sec)])
 
     for face in faces:
 
@@ -95,21 +92,19 @@ while True:
                 (yposCrit43 == yposCrit47) or (yposCrit44 == yposCrit46):
             winsound.PlaySound('glas' + voiceNum.__str__() + '.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
-            ### OVAJ DEO VEZAN ZA GRAFIK **
             t1 = datetime.datetime.now()
-            d = t1 - t
-            sec = d.seconds
-            with open('inn.cvs', 'a') as fa:
-                writer = csv.writer(fa)
-                writer.writerow([10, int(sec)])
-        else:
-            t1 = datetime.datetime.now()
-            d = t1 - t
-            sec = d.seconds
-            with open('inn.cvs', 'a') as fa:
+            delta_time = t1 - t
+            sec = delta_time.seconds
+            with open('attention_time_file', 'a') as fa:
                 writer = csv.writer(fa)
                 writer.writerow([0, int(sec)])
-                ### KRAJ TOG DELA 
+        else:
+            t1 = datetime.datetime.now()
+            delta_time = t1 - t
+            sec = delta_time.seconds
+            with open('attention_time_file', 'a') as fa:
+                writer = csv.writer(fa)
+                writer.writerow([100, int(sec)])
 
         ###############################################################################################################
         print(face)
@@ -125,19 +120,12 @@ while True:
     if time.time() - start > 3:  ##CHANGE!
         winsound.PlaySound('glas' + voiceNum.__str__() + '.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
         t1 = datetime.datetime.now()
-        d = t1 - t
-       ### PEKIJU AKO NIJE POTREBAN OVAJ DEO ZA FUNKCIJU MOZE DA SE IZBRISE 
-        f = open("dump.txt", "a")
-        f.write(str(d) + "\n")
-        f.close()
-        ### DO OVE LINIJE MISLIM DA MOYE DA SE PRISE
+        delta_time = t1 - t
         entry1 = 1
-        ### OVAJ DEO VEZAN ZA GRAFIK SVE DO ####
-        sec = d.seconds
-        with open('inn.cvs', 'a') as fa:
+        sec = delta_time.seconds
+        with open('attention_time_file', 'a') as fa:
             writer = csv.writer(fa)
-            writer.writerow([10, int(sec)])
-            
+            writer.writerow([0, int(sec)])
     ####################################################################################################################
     key = cv2.waitKey(1)
     if key == 27:
@@ -145,7 +133,7 @@ while True:
     if keyboard.is_pressed('esc'):
         break
 
-### ### OVAJ DEO VEZAN ZA GRAFIK **
-df = pd.read_csv('inn.cvs')
-fig = px.line(df, x='Vreme', y='Paznja', title='Trenuci gubitka paznje u vremenu')
+
+df = pd.read_csv('attention_time_file')
+fig = px.line(df, x='Time[s]', y='Attention[%]', title='Percentage of attention in time')
 fig.show()
