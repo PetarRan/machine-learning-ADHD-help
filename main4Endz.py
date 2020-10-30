@@ -41,12 +41,14 @@ while True:
 
     if isItFace==1:
         start=time.time()
+        #### OVAJ DEO JE VEZAN ZA GRAFIK **
         t1 = datetime.datetime.now()
         d= t1 - t
         sec = d.seconds
         with open('inn.cvs', 'a') as fa:
             writer = csv.writer(fa)
             writer.writerow([0, int(sec)])
+        ### KRAJ TOG DELA 
 
     for face in faces:
 
@@ -93,6 +95,7 @@ while True:
                 (yposCrit43 == yposCrit47) or (yposCrit44 == yposCrit46):
             winsound.PlaySound('glas' + voiceNum.__str__() + '.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
+            ### OVAJ DEO VEZAN ZA GRAFIK **
             t1 = datetime.datetime.now()
             d = t1 - t
             sec = d.seconds
@@ -106,6 +109,7 @@ while True:
             with open('inn.cvs', 'a') as fa:
                 writer = csv.writer(fa)
                 writer.writerow([0, int(sec)])
+                ### KRAJ TOG DELA 
 
         ###############################################################################################################
         print(face)
@@ -122,14 +126,18 @@ while True:
         winsound.PlaySound('glas' + voiceNum.__str__() + '.wav', winsound.SND_ASYNC | winsound.SND_ALIAS)
         t1 = datetime.datetime.now()
         d = t1 - t
+       ### PEKIJU AKO NIJE POTREBAN OVAJ DEO ZA FUNKCIJU MOZE DA SE IZBRISE 
         f = open("dump.txt", "a")
         f.write(str(d) + "\n")
         f.close()
+        ### DO OVE LINIJE MISLIM DA MOYE DA SE PRISE
         entry1 = 1
+        ### OVAJ DEO VEZAN ZA GRAFIK SVE DO ####
         sec = d.seconds
         with open('inn.cvs', 'a') as fa:
             writer = csv.writer(fa)
             writer.writerow([10, int(sec)])
+            
     ####################################################################################################################
     key = cv2.waitKey(1)
     if key == 27:
@@ -137,7 +145,7 @@ while True:
     if keyboard.is_pressed('esc'):
         break
 
-
+### ### OVAJ DEO VEZAN ZA GRAFIK **
 df = pd.read_csv('inn.cvs')
 fig = px.line(df, x='Vreme', y='Paznja', title='Trenuci gubitka paznje u vremenu')
 fig.show()
