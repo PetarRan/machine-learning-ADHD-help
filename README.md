@@ -147,20 +147,14 @@ Autori rada se zahvaljuju prof. dr Aleksandru Milosavljeviću, sa Elektronskog f
 
 # Literatura
 
-#
+[1] J. Kudek Mirošević, S. Opić &quot;PONAŠANJA KARAKTERISTIČNA ZA ADHD&quot;, u _Odgojne znanosti_ Zagreb, 2010, vol. 12 br. 1 str. 167-183.
 
-# [1] J. Kudek Mirošević, S. Opić &quot;PONAŠANJA KARAKTERISTIČNA ZA ADHD&quot;, u _Odgojne znanosti_ Zagreb, 2010, vol. 12 br. 1 str. 167-183.
+[2] H. Lawaniya, &quot;Computer Vision&quot;, _IET Computer Vision_, 2020, Suresh Gyan Vihar University, Jaipur
 
-# [2] H. Lawaniya, &quot;Computer Vision&quot;, _IET Computer Vision_, 2020, Suresh Gyan Vihar University, Jaipur
+[3] Python interpretator https://www.python.org/downloads/
 
-# [3] Python interpretator https://www.python.org/downloads/
+[4] Facial landmarks with dlib, OpenCV, and Python https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/ (posećen 29.10.2020.)
 
-# [4] Facial landmarks with dlib, OpenCV, and Python https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/ (posećen 29.10.2020.)
+[5] Detect Facial Landmark Points With C# And Dlib https://medium.com/machinelearningadvantage/detect-facial-landmark-points-with-c-and-dlib-in-only-50-lines-of-code-71ab59f8873f (posećen 29.10.2020.)
 
-# [5] Detect Facial Landmark Points With C# And Dlib https://medium.com/machinelearningadvantage/detect-facial-landmark-points-with-c-and-dlib-in-only-50-lines-of-code-71ab59f8873f (posećen 29.10.2020.)
-
-# [6] Shape predictor 68 face landmarks https://github.com/topics/shape-predictor-68-face-landmarks
-
-#
-
-#
+[6] Shape predictor 68 face landmarks https://github.com/topics/shape-predictor-68-face-landmarks
