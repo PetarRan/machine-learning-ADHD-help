@@ -30,13 +30,13 @@ Ovaj softver baziran na veštačkoj inteligenciji prati pažnju učenika u toku 
 
 Email: djordje.antic@elfak.rs, petarran@elfak.rs, danilovic.m@elfak.rs, krlekrle@elfak.rs, endziko@elfak.rs
 
-II. Princip rada
+### II. Princip rada
 
 Tehnologije implementirane u softveru prate promenu pravca lica učenika tako da svaki put kada učenik ne gleda u ekran vremenski period duži od 3 sekunde, reaguje glasovnom porukom kojom ga poziva da vrati pažnju na čas. Predavaču stiže informacija o tome da je učeniku opala pažnja kako bi mogao da adekvatno odreaguje. Kada program uoči da lice učenika nije u vidnom polju beleži vreme početka nepažnje, kao i vreme trajanja te nepažnje.
 
 Softver unosi takozvane vremenske pečate u tekstualni fajl i generiše histogram na osnovu koga se može zaključiti u kojim vremenskim intervalima je učeniku značajno opala pažnja. Po završetku predavanja softver računa procenat nepažnje u toku časa.
 
-III. Implementacija softvera
+### III. Implementacija softvera
 
 # _A. Python interpretator_
 
@@ -133,13 +133,13 @@ Slika 5. Histogram generisan testiranjem programa.
 
 #
 
-# IV. Zaključak
+### IV. Zaključak
 
 #
 
 Razvoj ove tehnologije omogućuje predavaču lakši rad sa učenicima koji pate od hiperaktivnog poremećaja. Predavač će znati u kojim vremenskim intervalima treba da napravi pauzu ili obrati posebnu pažnju na učenika. Softver i AI daju informacije predavaču koje učenik možda ne bi umeo da objasni. Takođe daje statistički podatak koji se može iskoristiti u naučne svrhe.
 
-# Zahvalnica
+### Zahvalnica
 
 #
 
