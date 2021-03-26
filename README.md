@@ -12,7 +12,7 @@ _Sadržaj_ – U ovom radu predstavljen je softver baziran na veštačkoj inteli
 
 #
 
-# I. Uvod
+### I. Uvod
 
 #
 
