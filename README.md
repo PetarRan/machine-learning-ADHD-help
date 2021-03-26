@@ -42,7 +42,7 @@ Softver unosi takozvane vremenske pečate u tekstualni fajl i generiše histogra
 
 Za izvršavanje programa pisanog u Python-u, neophodno je instalirati Python interpretator (slika 1.) sa čijom instalacijom se dobija integrisano okruženje za razvoj i učenje (_IDLE_) koje sadrži školjku u kojoj se mogu izvršavati Python programi [3].
 
-# ![](RackMultipart20210326-4-1k6i6gw_html_5c87faad0ef82c5c.png)
+![1](https://user-images.githubusercontent.com/70757499/112629302-6d696780-8e34-11eb-8b43-e63ec7223b18.png)
 
 Slika 1. Python shell
 
@@ -59,7 +59,7 @@ Orijentiri na licu (eng. _Face Landmarks_) se postavljaju na istaknutim delovima
 
 Za lociranje lica i detekciju ključnih struktura na licu neophodno je uvesti biblioteke _OpenCV_, _DLIB_ i _Numpy_.
 
-![](RackMultipart20210326-4-1k6i6gw_html_e143b1ec42940f4a.png)
+![real2](https://user-images.githubusercontent.com/70757499/112629837-13b56d00-8e35-11eb-86e2-3543fdc6a286.png)
 
 Osim ovih biblioteka neophodno je uvesti i biblioteke _Winsound_, _Random_, _Datetime_, _Pandas_ i _Plotly.express_ koje omogućavaju reprodukciju zvuka, nasumičan odabir zvučnog zapisa koji će se reprodukovati, prikaz vremena, manipulaciju podacima i analizu i izradu histograma, respektivno.
 
@@ -85,33 +85,36 @@ Orijentiri na licu su predodređeni, tako da kada je neophodno uočiti vrh neči
 
 Na slici 2. prikazan je raspored ovih orijentira. Ovakav raspored je univerzalan za svako ljudsko lice tako da će ga program bez problema detektovati na bilo kojoj slici ili video zapisu.
 
-![](RackMultipart20210326-4-1k6i6gw_html_b79e6196611d4992.png)
+![2](https://user-images.githubusercontent.com/70757499/112629873-20d25c00-8e35-11eb-9fa0-ffd3e09a3f66.png)
 
 Slika 2. Orijentiri na licu (_Face landmarks_).
 
 Za detekciju lica sa snimka neophodno je pozvati sledeću funkciju iz dlib biblioteke.
 
-![](RackMultipart20210326-4-1k6i6gw_html_4328035ad65a544e.png)Slika 3. Pozivanje funkcije iz _dlib_ biblioteke.
+![posle2](https://user-images.githubusercontent.com/70757499/112629968-45c6cf00-8e35-11eb-93e9-5eddc4332f2d.png)
+Slika 3. Pozivanje funkcije iz _dlib_ biblioteke.
 
 Za prepoznavanje lica korišćena već istreniranu mašinu ,,_shape\_predictor\_68\_face\_landmarks.dat_&quot; koja se nalazi na opensource github-u [6].
 
 Kao izlazni podatak dobijaju se koordinate uočenog lica sa snimka. Tačke koje se dobiju predstavljaju pravougaonik koji predstavlja naše lice. Prva tačka se odnosi na gornji levi ugao, a druga na donji desni ugao.
 
-![](RackMultipart20210326-4-1k6i6gw_html_334e7f533808d1d6.png)
+![real3](https://user-images.githubusercontent.com/70757499/112630029-58410880-8e35-11eb-9666-1e2bd7728b75.png)
 
 Slika 4. Izlazni podatak prethodno pozvane funkcije
 
 Sledeći deo koda ima namenu da prati _FaceMap_ vrednosti radi određivanja položaja lica.
 
-![](RackMultipart20210326-4-1k6i6gw_html_41a14210be3deaa9.png)
+![3](https://user-images.githubusercontent.com/70757499/112630076-698a1500-8e35-11eb-9925-149ec6c9cd2e.png)
 
 # Nakon što je položaj lica utvrđen, pratimo _FaceMap_ vrednosti za preklapanja tačaka na očima, a zatim se proveravaju vrednosti i poklapanje kritičnih tačaka lica.
 
-# ![](RackMultipart20210326-4-1k6i6gw_html_56028e0ec0fe6c74.png) ![](RackMultipart20210326-4-1k6i6gw_html_10d359387c83f0e2.png)
+![4](https://user-images.githubusercontent.com/70757499/112630205-8b839780-8e35-11eb-98c2-7cfe403fd930.png)
+
+![real5](https://user-images.githubusercontent.com/70757499/112630229-93433c00-8e35-11eb-9715-2bfcd796d780.png)
 
 # Ukoliko je vreme koje je lice provelo van vidnog polja veće od definisanog, softver će reagovati reprodukovanjem zvučnog zapisa i dodavanjem vremenskog pečata u fajl.
 
-# ![](RackMultipart20210326-4-1k6i6gw_html_18fd89683ec867e5.png)
+![real5 real](https://user-images.githubusercontent.com/70757499/112630343-be2d9000-8e35-11eb-92f7-f79d7f033833.png)
 
 #
 
@@ -121,13 +124,13 @@ Sledeći deo koda ima namenu da prati _FaceMap_ vrednosti radi određivanja polo
 
 # Po završetku predavanja program generiše histogram na osnovu _.cvs_ fajla u kome se nalaze vremenski intervali u kojima je osobi skrenuta pažnja. Svaki od stubića na histogramu predstavlja interval od 3 minuta u predavanju koje traje 45 minuta. Na y-osi nalazi se broj opomena u tom vremenskom intervalu, a x-osa služi kao vremenska osa.
 
-# ![](RackMultipart20210326-4-1k6i6gw_html_4bc3b91fc72944aa.png)
+![real5realreal](https://user-images.githubusercontent.com/70757499/112630367-ca195200-8e35-11eb-9999-85b45ee61d49.png)
 
 # Histogram daje uvid u rast i opadanje pažnje u toku predavanja i olakšava predavaču da po potrebi promeni pristup rada u tom vremenskom intervalu.
 
 # Za generisanje histograma korišćena je _matplotlib_ biblioteka na koji je primenjen osmišljen algoritam za inkrementiranje i dekrementiranje određenih vrednosti. Na slici 5. prikazan je histogram generisan testiranjem programa.
 
-# ![](RackMultipart20210326-4-1k6i6gw_html_4426b6fdf013f905.png)
+![5](https://user-images.githubusercontent.com/70757499/112631000-a276b980-8e36-11eb-8f28-18f845c52ef7.png)
 
 Slika 5. Histogram generisan testiranjem programa.
 
