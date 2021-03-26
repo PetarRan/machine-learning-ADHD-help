@@ -38,7 +38,7 @@ Softver unosi takozvane vremenske pečate u tekstualni fajl i generiše histogra
 
 ### III. Implementacija softvera
 
-| _A. Python interpretator_
+| _A. Python interpretator_ |
 
 Za izvršavanje programa pisanog u Python-u, neophodno je instalirati Python interpretator (slika 1.) sa čijom instalacijom se dobija integrisano okruženje za razvoj i učenje (_IDLE_) koje sadrži školjku u kojoj se mogu izvršavati Python programi [3].
 
@@ -46,7 +46,7 @@ Za izvršavanje programa pisanog u Python-u, neophodno je instalirati Python int
 
 Slika 1. Python shell
 
-| _B. Detekcija lica i orijentiri na licu_
+| _B. Detekcija lica i orijentiri na licu_ |
 
 #
 
