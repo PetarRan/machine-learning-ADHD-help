@@ -2,13 +2,13 @@
 
 #
 
-# Đorđe Antić, Petar Ranđelović, Milan Danilović, Aleksa Krstić, Anđela Kostić
+Đorđe Antić, Petar Ranđelović, Milan Danilović, Aleksa Krstić, Anđela Kostić
 
 #
 
 #
 
-# _Sadržaj_ – U ovom radu predstavljen je softver baziran na veštačkoj inteligenciji i računarskom vidu, koji ima namenu da pomogne pri onlajn (_online_) radu sa decom koja pate od ADHD-a. Softver je kreiran pomoću programskog jezika Python.
+_Sadržaj_ – U ovom radu predstavljen je softver baziran na veštačkoj inteligenciji i računarskom vidu, koji ima namenu da pomogne pri onlajn (_online_) radu sa decom koja pate od ADHD-a. Softver je kreiran pomoću programskog jezika Python.
 
 #
 
