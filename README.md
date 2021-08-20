@@ -1,13 +1,14 @@
-![GitHub Contributors Image](https://contrib.rocks/image?repo=Your_GitHub_Username/Your_GitHub_Repository_Name)
-[![Build Status](https://travis-ci.com/username/python-.cv-.dlib-eestech2020challenge.svg?branch=master)](https://travis-ci.com/PetarRan/python-.cv-.dlib-eestech2020challenge)
+[![Build Status](https://travis-ci.com/PetarRan/python-.cv-.dlib-eestech2020challenge.svg?branch=master)](https://travis-ci.com/PetarRan/python-.cv-.dlib-eestech2020challenge)
+
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=PetarRan&theme=blue-green)
+
 ![Jokes Card](https://readme-jokes.vercel.app/api)
 
 # Softversko rešenje za pomoć pri praćenju nastave kod dece sa hiperaktivnim poremećajem
 
 #
 
-Đorđe Antić, Petar Ranđelović, Milan Danilović, Aleksa Krstić, Anđela Kostić
+![GitHub Contributors Image](https://contrib.rocks/image?repo=Your_GitHub_Username/Your_GitHub_Repository_Name)
 
 #
 
