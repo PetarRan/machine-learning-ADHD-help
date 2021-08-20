@@ -1,3 +1,5 @@
+![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+
 # Softversko rešenje za pomoć pri praćenju nastave kod dece sa hiperaktivnim poremećajem
 
 #
