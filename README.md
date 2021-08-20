@@ -2,8 +2,6 @@
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=PetarRan&theme=blue-green)
 
-![Jokes Card](https://readme-jokes.vercel.app/api)
-
 # Softversko rešenje za pomoć pri praćenju nastave kod dece sa hiperaktivnim poremećajem
 
 #
