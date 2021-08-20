@@ -1,4 +1,4 @@
-![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+[![Build Status](https://travis-ci.com/username/projectname.svg?branch=master)](https://travis-ci.com/username/projectname)
 
 # Softversko rešenje za pomoć pri praćenju nastave kod dece sa hiperaktivnim poremećajem
 
