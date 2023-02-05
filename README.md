@@ -1,24 +1,10 @@
-[![Build Status](https://travis-ci.com/PetarRan/python-.cv-.dlib-eestech2020challenge.svg?branch=master)](https://travis-ci.com/PetarRan/python-.cv-.dlib-eestech2020challenge)
-
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=PetarRan&theme=blue-green)
-
 # Softversko rešenje za pomoć pri praćenju nastave kod dece sa hiperaktivnim poremećajem
 
-#
-
-![GitHub Contributors Image](https://contrib.rocks/image?repo=PetarRan/machine-learning-ADHD-help)
-
-#
-
-#
+![image](https://user-images.githubusercontent.com/70757499/216841740-170173b9-ad41-4679-8af7-95cb5c326189.png)
 
 _Sadržaj_ – U ovom radu predstavljen je softver baziran na veštačkoj inteligenciji i računarskom vidu, koji ima namenu da pomogne pri onlajn (_online_) radu sa decom koja pate od ADHD-a. Softver je kreiran pomoću programskog jezika Python.
 
-#
-
 ### I. Uvod
-
-#
 
 ADHD (_Attention Deficit Hyperactivity Disorder_), odnosno poremećaj pažnje, je prvi psihijatrijski poremećaj koji je dijagnostifikovan kod dece. Širom sveta čak 8 do 12% dece uglavnom uzrasta od 5 do 18 godina pati od ovog poremećaja. Od ukupnog broja dijagnoza koje deca dobijaju čak 70% se odnosi na ovaj poremećaj. ADHD karakteriše dosta različitih simptoma, a oni najvažniji su nedostatak pažnje, hiperaktivnost i impulsivnost [1].
 
@@ -165,3 +151,6 @@ Autori rada se zahvaljuju prof. dr Aleksandru Milosavljeviću, sa Elektronskog f
 [5] Detect Facial Landmark Points With C# And Dlib https://medium.com/machinelearningadvantage/detect-facial-landmark-points-with-c-and-dlib-in-only-50-lines-of-code-71ab59f8873f (posećen 29.10.2020.)
 
 [6] Shape predictor 68 face landmarks https://github.com/topics/shape-predictor-68-face-landmarks
+
+![GitHub Contributors Image](https://contrib.rocks/image?repo=PetarRan/machine-learning-ADHD-help)
+
